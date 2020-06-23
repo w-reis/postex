@@ -1,8 +1,10 @@
-package com.postex.app;
+package com.postex.app.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.postex.app.R;
 
 public class ActivityCadastro extends AppCompatActivity {
 
