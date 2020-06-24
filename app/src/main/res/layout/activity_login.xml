@@ -8,11 +8,9 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="0dp"
+        android:layout_width="305dp"
         android:layout_height="58dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginBottom="104dp"
+        android:layout_marginTop="57dp"
         android:background="@drawable/rounded_button"
         android:backgroundTint="@color/colorPrimaryDark"
         android:text="Entrar"
@@ -21,51 +19,48 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="0dp"
+        android:layout_width="305dp"
         android:layout_height="58dp"
-        android:layout_marginStart="54dp"
-        android:layout_marginEnd="54dp"
-        android:layout_marginBottom="35dp"
+        android:layout_marginBottom="20dp"
         android:ems="10"
+        android:hint="Endereço de e-mail"
         android:inputType="textPersonName"
-        android:text=" Endereço de e-mail"
         android:textAllCaps="false"
-        android:textColor="?attr/colorButtonNormal"
+        android:textColor="@color/fontColor"
         android:textColorHighlight="@color/colorAccent"
-        android:textSize="14sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/editText2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
         android:id="@+id/editText2"
-        android:layout_width="0dp"
+        android:layout_width="305dp"
         android:layout_height="58dp"
-        android:layout_marginStart="54dp"
-        android:layout_marginEnd="54dp"
-        android:layout_marginBottom="122dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Sua senha"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="14sp"
+        android:hint="Sua senha"
+        android:inputType="textPassword"
+        android:textColor="@color/fontColor"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="123dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="181dp"
-        android:layout_marginBottom="59dp"
+        android:layout_height="57dp"
+        android:layout_marginBottom="57dp"
         android:text="Entrar"
         android:textAlignment="center"
         android:textAllCaps="false"
@@ -74,7 +69,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/editText"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
