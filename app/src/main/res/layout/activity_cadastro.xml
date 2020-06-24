@@ -17,7 +17,7 @@
         android:textColor="@color/fontColor"
         android:textSize="36sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
+        app:layout_constraintBottom_toTopOf="@+id/txtEmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,7 +25,7 @@
         app:layout_constraintVertical_chainStyle="packed" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/txtEmail"
         android:layout_width="306dp"
         android:layout_height="58dp"
         android:layout_marginBottom="20dp"
@@ -34,14 +34,14 @@
         android:inputType="textPersonName"
         android:textColor="@color/fontColor"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/editText2"
+        app:layout_constraintBottom_toTopOf="@+id/txtNome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/txtNome"
         android:layout_width="306dp"
         android:layout_height="58dp"
         android:layout_marginBottom="20dp"
@@ -50,14 +50,14 @@
         android:inputType="textPersonName"
         android:textColor="@color/fontColor"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/editText3"
+        app:layout_constraintBottom_toTopOf="@+id/txtTelefone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/txtTelefone"
         android:layout_width="306dp"
         android:layout_height="58dp"
         android:layout_marginBottom="20dp"
@@ -66,14 +66,14 @@
         android:inputType="textPersonName"
         android:textColor="@color/fontColor"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/editText4"
+        app:layout_constraintBottom_toTopOf="@+id/txtSenha"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/txtNome" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/txtSenha"
         android:layout_width="306dp"
         android:layout_height="58dp"
         android:layout_marginBottom="20dp"
@@ -82,13 +82,13 @@
         android:inputType="textPassword"
         android:textColor="@color/fontColor"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/editText5"
+        app:layout_constraintBottom_toTopOf="@+id/txtConfirmaSenha"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTelefone" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/txtConfirmaSenha"
         android:layout_width="306dp"
         android:layout_height="58dp"
         android:ems="10"
@@ -100,7 +100,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+        app:layout_constraintTop_toBottomOf="@+id/txtSenha" />
 
     <Button
         android:id="@+id/button"
@@ -119,5 +119,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5" />
+        app:layout_constraintTop_toBottomOf="@+id/txtConfirmaSenha" />
 </androidx.constraintlayout.widget.ConstraintLayout>
