@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.postex.app.R;
 import com.postex.app.Recipient;
+import com.postex.app.api.ApiConfig;
 import com.postex.app.api.RecipientService;
 
 import retrofit2.Call;
@@ -36,26 +37,24 @@ public class ActivityCadastro extends AppCompatActivity {
         btRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Recipient recipient = new Recipient(
-                        name.getText().toString(),
-                        email.getText().toString(),
-                        phone.getText().toString(),
-                        password.getText().toString()
-                );
-
-                sendRequest(recipient);
+                if (password.getText().toString().equals(txConfirm.getText().toString())){
+                    Recipient recipient = new Recipient(
+                            name.getText().toString(),
+                            email.getText().toString(),
+                            phone.getText().toString(),
+                            password.getText().toString()
+                    );
+                    registerRecipient(recipient);
+                } else {
+                    Toast.makeText(ActivityCadastro.this, "As senhas não coincidem!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
 
-    private void sendRequest(Recipient recipient){
-        Retrofit.Builder builder = new Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:3333/")
-                .addConverterFactory(GsonConverterFactory.create());
-
-        Retrofit retrofit = builder.build();
-
-        RecipientService client = retrofit.create(RecipientService.class);
+    private void registerRecipient(Recipient recipient) {
+        ApiConfig config = new ApiConfig();
+        RecipientService client = config.createRequest().create(RecipientService.class);
         Call<Recipient> call = client.registerRecipient(recipient);
 
         call.enqueue(new Callback<Recipient>() {
