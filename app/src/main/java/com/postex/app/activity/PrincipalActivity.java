@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.postex.app.R;
+
 public class PrincipalActivity extends AppCompatActivity {
 
     @Override

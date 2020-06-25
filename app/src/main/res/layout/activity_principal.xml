@@ -4,71 +4,119 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="#FCFCFC"
     tools:context=".activity.PrincipalActivity">
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:fontFamily="@font/roboto"
         android:text="Você tem"
         android:textColor="@color/fontColor"
         android:textSize="36sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="124dp"
-        tools:layout_editor_absoluteY="68dp" />
-
-    <EditText
-        android:id="@+id/editText6"
-        android:layout_width="322dp"
-        android:layout_height="102dp"
-        android:background="@drawable/rounded_button"
-        android:backgroundTint="@color/backgroundColor"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textColor="@color/backgroundColor"
-        tools:layout_editor_absoluteX="44dp"
-        tools:layout_editor_absoluteY="314dp" />
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/card"
-        tools:layout_editor_absoluteX="138dp"
-        tools:layout_editor_absoluteY="159dp" />
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:srcCompat="@drawable/card" />
 
-    <EditText
-        android:id="@+id/editText7"
-        android:layout_width="322"
-        android:layout_height="40dp"
-        android:background="@drawable/rounded_button"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textColor="@android:color/holo_green_dark"
-        tools:layout_editor_absoluteX="47dp"
-        tools:layout_editor_absoluteY="481dp" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="323dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        app:cardCornerRadius="24dp"
+        app:contentPadding="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2">
 
-    <EditText
-        android:id="@+id/editText8"
-        android:layout_width="322dp"
-        android:layout_height="40dp"
-        android:background="@drawable/rounded_button"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textColor="@android:color/holo_orange_dark"
-        tools:layout_editor_absoluteX="47dp"
-        tools:layout_editor_absoluteY="557dp" />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/roboto"
+            android:text="0 correspondências"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/fontColor"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
 
-    <EditText
-        android:id="@+id/editText9"
-        android:layout_width="322dp"
-        android:layout_height="40dp"
-        android:background="@drawable/rounded_button"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textColor="@android:color/holo_red_dark"
-        tools:layout_editor_absoluteX="47dp"
-        tools:layout_editor_absoluteY="629dp" />
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="329dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/green_left_border"
+        android:fontFamily="@font/roboto"
+        android:padding="20dp"
+        android:text="0 retiradas"
+        android:textAllCaps="false"
+        android:textColor="#26CD8F"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="329dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/yellow_left_border"
+        android:fontFamily="@font/roboto"
+        android:padding="20dp"
+        android:text="0 pendentes"
+        android:textAllCaps="false"
+        android:textColor="#FECD56"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="329dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/red_left_border"
+        android:fontFamily="@font/roboto"
+        android:padding="20dp"
+        android:text="0 devolvidas"
+        android:textAllCaps="false"
+        android:textColor="#FA4F3B"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
