@@ -4,9 +4,14 @@ import com.postex.app.Recipient;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.POST;
 
 public interface RecipientService {
     @POST("/recipients")
     Call<Recipient> registerRecipient(@Body Recipient recipient);
+
+    @GET("/login")
+    Call<Recipient> login(@Header("Authorization") String authHeader);
 }
