@@ -55,7 +55,6 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Recipient> call, Response<Recipient> response) {
                 if (response.isSuccessful()) {
-                    Toast.makeText(LoginActivity.this, "Usuário logado ID: " + response.body().getId(), Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(getApplicationContext(), PrincipalActivity.class);
                     intent.putExtra("recipient", response.body());
                     startActivity(intent);
