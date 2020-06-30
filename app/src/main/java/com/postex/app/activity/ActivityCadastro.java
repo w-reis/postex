@@ -58,9 +58,14 @@ public class ActivityCadastro extends AppCompatActivity {
         call.enqueue(new Callback<Recipient>() {
             @Override
             public void onResponse(Call<Recipient> call, Response<Recipient> response) {
-                Toast.makeText(ActivityCadastro.this, "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(intent);
+                if (response.isSuccessful())
+                {
+                    Toast.makeText(ActivityCadastro.this, "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+
             }
 
             @Override
@@ -68,5 +73,13 @@ public class ActivityCadastro extends AppCompatActivity {
                 Toast.makeText(ActivityCadastro.this, "Algo deu errado! Verifique seus dados.", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

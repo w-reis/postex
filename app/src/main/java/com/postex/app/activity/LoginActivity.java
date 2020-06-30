@@ -58,6 +58,7 @@ public class LoginActivity extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(), PrincipalActivity.class);
                     intent.putExtra("recipient", response.body());
                     startActivity(intent);
+                    finish();
                 }else {
                     switch (response.code()){
                         case 500 :
@@ -75,5 +76,13 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(LoginActivity.this, "Erro: verifique sua conexão.", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
