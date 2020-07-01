@@ -6,4 +6,90 @@
     android:layout_height="match_parent"
     tools:context=".activity.EditarActivity">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:text="Editar"
+        android:textAlignment="center"
+        android:textColor="@color/fontColor"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/txtEditEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <EditText
+        android:id="@+id/txtEditEmail"
+        android:layout_width="306dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="57dp"
+        android:ems="10"
+        android:fontFamily="@font/roboto"
+        android:hint="Endereço de e-mail"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/fontColor"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtEditNome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/txtEditNome"
+        android:layout_width="306dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:fontFamily="@font/roboto"
+        android:hint="Seu nome completo"
+        android:inputType="textPersonName"
+        android:textColor="@color/fontColor"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtEditTelefone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEditEmail" />
+
+    <EditText
+        android:id="@+id/txtEditTelefone"
+        android:layout_width="306dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="57dp"
+        android:ems="10"
+        android:fontFamily="@font/roboto"
+        android:hint="Seu telefone"
+        android:inputType="phone"
+        android:textColor="@color/fontColor"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEditNome" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="306dp"
+        android:layout_height="58dp"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="?attr/actionModeSplitBackground"
+        android:fontFamily="@font/roboto"
+        android:text="Gravar"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/backgroundColor"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEditTelefone" />
 </androidx.constraintlayout.widget.ConstraintLayout>
