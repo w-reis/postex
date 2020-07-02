@@ -14,6 +14,8 @@ import com.postex.app.Recipient;
 import com.postex.app.api.ApiConfig;
 import com.postex.app.api.RecipientService;
 
+import java.io.IOException;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -25,7 +27,7 @@ public class ActivityCadastro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
 
-        final Button btRegister = (Button) findViewById(R.id.button);
+        final Button btRegister = (Button) findViewById(R.id.btnRegister);
         final EditText name = (EditText) findViewById(R.id.txtNome);
         final EditText email = (EditText) findViewById(R.id.txtEmail);
         final EditText phone = (EditText) findViewById(R.id.txtTelefone);
@@ -53,11 +55,11 @@ public class ActivityCadastro extends AppCompatActivity {
     private void registerRecipient(Recipient recipient) {
         ApiConfig config = new ApiConfig();
         RecipientService client = config.createRequest().create(RecipientService.class);
-        Call<Recipient> call = client.registerRecipient(recipient);
+        Call<Void> call = client.registerRecipient(recipient);
 
-        call.enqueue(new Callback<Recipient>() {
+        call.enqueue(new Callback<Void>() {
             @Override
-            public void onResponse(Call<Recipient> call, Response<Recipient> response) {
+            public void onResponse(Call<Void> call, Response<Void> response) {
                 if (response.isSuccessful())
                 {
                     Toast.makeText(ActivityCadastro.this, "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show();
@@ -65,11 +67,14 @@ public class ActivityCadastro extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 }
+                else {
+                    Toast.makeText(ActivityCadastro.this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show();
+                }
 
             }
 
             @Override
-            public void onFailure(Call<Recipient> call, Throwable t) {
+            public void onFailure(Call<Void> call, Throwable t) {
                 Toast.makeText(ActivityCadastro.this, "Algo deu errado! Verifique seus dados.", Toast.LENGTH_SHORT).show();
             }
         });
