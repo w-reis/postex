@@ -7,7 +7,7 @@
     tools:context=".activity.LoginActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnEntrar"
         android:layout_width="305dp"
         android:layout_height="58dp"
         android:layout_marginTop="57dp"
@@ -53,7 +53,7 @@
         android:inputType="textPassword"
         android:textColor="@color/fontColor"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/btnEntrar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"

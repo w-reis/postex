@@ -17,8 +17,6 @@ import com.postex.app.api.ApiError;
 import com.postex.app.api.ErrorUtils;
 import com.postex.app.api.RecipientService;
 
-import java.io.IOException;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -35,7 +33,7 @@ public class LoginActivity extends AppCompatActivity {
         email = (EditText) findViewById(R.id.txEmail);
         password = (EditText) findViewById(R.id.txSenha);
 
-        btEntrar = (Button) findViewById(R.id.button);
+        btEntrar = (Button) findViewById(R.id.btnEntrar);
         btEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,6 +56,7 @@ public class LoginActivity extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(), PrincipalActivity.class);
                     intent.putExtra("recipient", response.body());
                     startActivity(intent);
+                    finish();
                 }else {
                     switch (response.code()){
                         case 500 :
@@ -75,5 +74,13 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(LoginActivity.this, "Erro: verifique sua conexão.", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
